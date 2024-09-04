@@ -53,6 +53,11 @@ export class ChatStorageAccountConstruct extends Construct {
       storageAccountName: this.chatStorageAccount.name,
     });
 
+    new StorageTable(this, "individualMessageStorageTable", {
+      name: "individualMessage",
+      storageAccountName: this.chatStorageAccount.name,
+    });
+
     new StorageContainer(this, "chatStorageBlob", {
       name: "voices",
       storageAccountName: this.chatStorageAccount.name,
